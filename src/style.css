@@ -1,0 +1,473 @@
+/* ───────────── GLOBAL ───────────── */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ───────────── GLOBAL ───────────── */
+:root {
+  /* Backgrounds */
+  --bg-start: #333;
+  --bg-end: #242424;
+  --container-bg: #333333;
+
+  /* Text */
+  --text: #ffffff;
+
+  /* Primary / accent */
+  --primary: #ff8c00;
+  /* orange */
+  --primary-hover: #ff7a00;
+  /* darkorange-ish */
+
+  /* Danger */
+  --danger: #dc143c;
+  /* crimson */
+  --danger-hover: #c92643;
+  /* rgb(201,38,67) */
+  --danger-hover-2: #c72440;
+  /* rgb(199,36,64) */
+
+  /* Muted / borders */
+  --border-muted: #bbb;
+  --muted-dark: #444;
+  --muted-light: #eeeeee;
+  --muted-darker: #3b3b3b;
+  --light-border: #ddd;
+  --muted-gray: #555;
+  --muted-gray-2: #aaa;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, var(--bg-start), var(--bg-end));
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ───────────── CONTAINER ───────────── */
+.container {
+  width: 100%;
+  max-width: 40em;
+  background: var(--container-bg);
+  border-radius: 12px;
+  padding: 1.5em;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* ───────────── NAVBAR ───────────── */
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--muted-darker);
+  color: var(--text);
+  border-radius: 10px;
+  padding: 10px 20px;
+  margin-bottom: 1em;
+}
+
+/* ───────────── AVATAR DROPDOWN ───────────── */
+.avatar-container {
+  position: relative;
+}
+
+.avatar-btn {
+  background: var(--primary);
+  color: #f9f9f9;
+  font-weight: bold;
+  border: none;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.avatar-btn:hover {
+  background: var(--primary-hover);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 120%;
+  right: 0;
+  background: var(--muted-dark);
+  color: var(--text);
+  border-radius: 8px;
+  padding: 0.8em;
+  width: 200px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 100;
+  animation: fadeIn 0.15s ease-in;
+}
+
+.dropdown-menu::before {
+  content: "";
+  position: absolute;
+  top: -6px;
+  right: 12px;
+  width: 10px;
+  height: 10px;
+  background: var(--muted-dark);
+  transform: rotate(45deg);
+}
+
+.user-email {
+  font-size: 0.9em;
+  color: var(--text);
+  word-wrap: break-word;
+  margin-bottom: 0.8em;
+  text-align: center;
+}
+
+.dropdown-menu button {
+  width: 100%;
+  background: var(--danger);
+  border: none;
+  color: #f9f9f9;
+  padding: 0.5em;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.dropdown-menu button:hover {
+  background: var(--danger-hover);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ───────────── INPUT BOX ───────────── */
+.inputContainer {
+  display: flex;
+  gap: 0.5em;
+  margin-bottom: 1em;
+}
+
+.inputContainer input {
+  background-color: var(--bg-start);
+  color: var(--text);
+  flex: 0;
+  padding: 1em;
+  font-size: 1em;
+  border: 1px solid var(--border-muted);
+  border-radius: 6px;
+  outline: none;
+}
+
+.inputContainer button {
+  padding: 1em 2em;
+  border: none;
+  background: var(--primary);
+  color: #f9f9f9;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.inputContainer button:hover {
+  background: var(--primary-hover);
+}
+
+/* ───────────── FILTER BUTTONS ───────────── */
+.btns {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 1em 0;
+  flex-wrap: wrap;
+}
+
+.displayContainer .btn {
+  padding: 0.6em 2em;
+  border: 1px solid var(--muted-dark);
+  border-radius: 8px;
+  background: var(--muted-dark);
+  color: var(--text);
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.2s;
+  margin-inline: 0.3rem;
+}
+
+.displayContainer .active {
+  background: var(--primary);
+  color: #f9f9f9;
+}
+
+.btn:hover {
+  background: var(--light-border);
+  color: var(--container-bg);
+}
+
+/* ───────────── TASK LIST ───────────── */
+.displayContainer {
+  margin-top: 1rem;
+  border: 1px solid var(--muted-dark);
+  border-radius: 8px;
+  padding: 1em;
+  background: var(--container-bg);
+}
+
+.displayContainer ul {
+  list-style: none;
+  max-height: 55vh;
+  overflow-y: auto;
+  padding-right: 0.2em;
+  margin-top: 0.5em;
+}
+
+.displayContainer ul::-webkit-scrollbar {
+  width: 6px;
+}
+
+.displayContainer ul::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 6px;
+}
+
+.displayContainer ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid var(--light-border);
+  border-radius: 6px;
+  padding: 0.6em 0.8em;
+  margin-bottom: 0.6em;
+  transition: background 0.2s;
+  color: var(--text);
+}
+
+.displayContainer ul li:hover {
+  background: var(--muted-darker);
+}
+
+.displayContainer ul li span {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  font-size: 1.1em;
+}
+
+.displayContainer ul li span input {
+  margin-right: 0.6em;
+  flex: 0;
+}
+
+.displayContainer ul li button {
+  background: var(--danger);
+  color: #f9f9f9;
+  border: none;
+  border-radius: 6px;
+  padding: 0.4em 1em;
+  cursor: pointer;
+}
+
+.displayContainer ul li button:hover {
+  background: var(--danger-hover-2);
+}
+
+/* ───────────── LOGIN / SIGNUP PAGE ───────────── */
+.auth-container {
+  width: 100%;
+  max-width: 25em;
+  background: var(--container-bg);
+  border-radius: 12px;
+  padding: 2em;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.auth-container h2 {
+  margin-bottom: 1em;
+  color: var(--text);
+}
+
+.auth-container input {
+  width: 100%;
+  padding: 0.9em;
+  margin: 0.6em 0;
+  border: 1px solid var(--muted-gray-2);
+  border-radius: 6px;
+  font-size: 1em;
+  outline: none;
+}
+
+.auth-container button {
+  width: 100%;
+  padding: 0.8em;
+  background: var(--primary);
+  color: #f9f9f9;
+  border: none;
+  border-radius: 6px;
+  margin-top: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.auth-container button:hover {
+  background: var(--primary-hover);
+}
+
+.auth-container p {
+  margin-top: 1em;
+  color: var(--border-muted);
+  font-size: 0.9em;
+  cursor: pointer;
+}
+
+.auth-container p:hover {
+  color: var(--primary);
+}
+
+/* ───────────── LOADER ───────────── */
+.loader-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 70vh;
+  color: var(--text);
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid var(--muted-gray);
+  border-top: 4px solid var(--primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1em;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+button:disabled {
+  opacity: 0.8;
+  cursor: not-allowed;
+}
+
+.btn-spinner {
+  width: 20px;
+  height: 20px;
+  border: 3px solid var(--text);
+  border-top: 3px solid transparent;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin: 0 auto;
+}
+
+/* ───────────── RESPONSIVE DESIGN ───────────── */
+
+@media (max-width: 600px) {
+  body {
+    padding: 0.5em;
+    align-items: flex-start;
+  }
+
+  .container {
+    width: 100%;
+    max-width: none;
+    border-radius: 10px;
+    padding: 1em;
+    margin-top: 0.8em;
+  }
+
+  .topBar {
+    font-size: 0.9em;
+    padding: 0.7em;
+  }
+
+  .inputContainer {
+    position: sticky;
+    top: 3em;
+    background: var(--container-bg);
+    padding: 0.8em 0;
+    border-radius: 10px;
+    z-index: 5;
+  }
+
+  .btns {
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    flex: 1;
+    font-size: 0.9em;
+    padding: 0.5em;
+    margin: 0;
+  }
+
+  .displayContainer ul li {
+    gap: 0.5em;
+  }
+
+  .displayContainer ul li button {
+    align-self: flex-end;
+    width: fit-content;
+  }
+}
+
+@media (max-width: 900px) {
+  .container {
+    max-width: 28em;
+    margin: 1em auto;
+  }
+
+  .topBar {
+    gap: 0.6em;
+    font-size: 0.95em;
+  }
+
+  .userInfo {
+    flex-wrap: wrap;
+    gap: 0.6em;
+  }
+
+  .inputContainer {
+    flex-direction: column;
+    gap: 0.6em;
+  }
+
+  .inputContainer input,
+  .inputContainer input[type="date"] {
+    width: 100%;
+  }
+
+  .btns .btn {
+    padding: 0.5rem;
+    width: fit-content;
+  }
+}

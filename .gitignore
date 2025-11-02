@@ -1,0 +1,33 @@
+# ───────────── Node.js & React ─────────────
+node_modules/
+# build/
+dist/
+.cache/
+coverage/
+.DS_Store
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ───────────── Environment Variables ─────────────
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+
+# ───────────── Firebase ─────────────
+firebase-debug.log
+.firebase/
+.firebaserc
+*.runtimeconfig.json
+serviceAccountKey.json
+
+# ───────────── VSCode / IDE Files ─────────────
+.vscode/
+.idea/
+*.swp
+
+# ───────────── OS / Misc ─────────────
+Thumbs.db
