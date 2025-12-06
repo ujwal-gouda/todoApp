@@ -41,7 +41,6 @@ export default function App() {
         </div>
       )}
 
-      {/* ✅ Global toast container (works anywhere) */}
       <ToastContainer position="top-center" autoClose={3000} theme="dark" />
     </BrowserRouter>
   );

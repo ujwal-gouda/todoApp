@@ -9,7 +9,6 @@ export default function TaskList({ filter }) {
   const [editingTaskId, setEditingTaskId] = useState(null);
   const [editedText, setEditedText] = useState("");
 
-  // 🔄 Fetch tasks from Firebase
   useEffect(() => {
     const user = auth.currentUser;
     if (!user) {
@@ -38,7 +37,6 @@ export default function TaskList({ filter }) {
     return () => off(taskRef);
   }, []);
 
-  // 🟢 Show loader while fetching
   if (loading) return <Loader />;
 
   // 🔽 Filter tasks
@@ -48,7 +46,6 @@ export default function TaskList({ filter }) {
     return true;
   });
 
-  // 🧠 Long-press support for mobile
   let pressTimer;
   const handleLongPressStart = (id, task) => {
     pressTimer = setTimeout(() => {
@@ -62,7 +59,6 @@ export default function TaskList({ filter }) {
     clearTimeout(pressTimer);
   };
 
-  // ✅ Render tasks
   return (
     <ul>
       {filtered.map((t) => (

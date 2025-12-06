@@ -1,11 +1,9 @@
-/* ───────────── GLOBAL ───────────── */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* ───────────── GLOBAL ───────────── */
 :root {
   /* Backgrounds */
   --bg-start: #333;
@@ -39,12 +37,6 @@
   --muted-gray-2: #aaa;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
   font-family: "Poppins", sans-serif;
   background: linear-gradient(135deg, var(--bg-start), var(--bg-end));
@@ -54,7 +46,6 @@ body {
   align-items: center;
 }
 
-/* ───────────── CONTAINER ───────────── */
 .container {
   width: 100%;
   max-width: 40em;
@@ -64,7 +55,6 @@ body {
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* ───────────── NAVBAR ───────────── */
 .topBar {
   display: flex;
   justify-content: space-between;
@@ -76,7 +66,6 @@ body {
   margin-bottom: 1em;
 }
 
-/* ───────────── AVATAR DROPDOWN ───────────── */
 .avatar-container {
   position: relative;
 }
@@ -160,7 +149,6 @@ body {
   }
 }
 
-/* ───────────── INPUT BOX ───────────── */
 .inputContainer {
   display: flex;
   gap: 0.5em;
@@ -193,7 +181,6 @@ body {
   background: var(--primary-hover);
 }
 
-/* ───────────── FILTER BUTTONS ───────────── */
 .btns {
   display: flex;
   justify-content: space-evenly;
@@ -223,7 +210,6 @@ body {
   color: var(--container-bg);
 }
 
-/* ───────────── TASK LIST ───────────── */
 .displayContainer {
   margin-top: 1rem;
   border: 1px solid var(--muted-dark);
@@ -290,7 +276,6 @@ body {
   background: var(--danger-hover-2);
 }
 
-/* ───────────── LOGIN / SIGNUP PAGE ───────────── */
 .auth-container {
   width: 100%;
   max-width: 25em;
@@ -344,7 +329,6 @@ body {
   color: var(--primary);
 }
 
-/* ───────────── LOADER ───────────── */
 .loader-container {
   display: flex;
   flex-direction: column;
@@ -389,7 +373,6 @@ button:disabled {
   margin: 0 auto;
 }
 
-/* ───────────── RESPONSIVE DESIGN ───────────── */
 
 @media (max-width: 600px) {
   body {

@@ -14,7 +14,6 @@ export default function AuthPage({ onLogin }) {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [loading, setLoading] = useState(false);
 
-  // 🟢 LOGIN
   const handleLogin = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -28,7 +27,6 @@ export default function AuthPage({ onLogin }) {
     }
   };
 
-  // 🟠 SIGNUP
   const handleSignup = async (e) => {
     e.preventDefault();
     if (password !== confirmPassword) {
@@ -47,7 +45,6 @@ export default function AuthPage({ onLogin }) {
     }
   };
 
-  // 🟣 FORGOT PASSWORD
   const handleForgotPassword = async () => {
     if (!email) {
       toast.error("⚠️ Please enter your email first!");
@@ -72,7 +69,6 @@ export default function AuthPage({ onLogin }) {
     }
   };
 
-  // 🔔 ERROR HANDLER
   const showFirebaseError = (error) => {
     const code = error.code;
     switch (code) {
@@ -120,7 +116,6 @@ export default function AuthPage({ onLogin }) {
           required
         />
 
-        {/* ✅ Forgot Password only for login */}
         {isLogin && (
           <p
             onClick={handleForgotPassword}

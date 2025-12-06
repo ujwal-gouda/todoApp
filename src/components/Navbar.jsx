@@ -7,7 +7,6 @@ export default function Navbar() {
   const user = auth.currentUser;
   const menuRef = useRef(null);
 
-  // 🌗 Initialize theme based on device or saved preference
   useEffect(() => {
     const saved = localStorage.getItem("theme");
     const prefersDark = window.matchMedia(
@@ -19,7 +18,6 @@ export default function Navbar() {
     applyTheme(currentTheme);
   }, []);
 
-  // 🌓 Function to apply theme (updates :root variables)
   const applyTheme = (mode) => {
     const root = document.documentElement;
 
@@ -60,7 +58,6 @@ export default function Navbar() {
     }
   };
 
-  // 🌙 Toggle theme handler
   const toggleTheme = () => {
     const newTheme = theme === "dark" ? "light" : "dark";
     setTheme(newTheme);
@@ -68,7 +65,6 @@ export default function Navbar() {
     applyTheme(newTheme);
   };
 
-  // 🧩 Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (menuRef.current && !menuRef.current.contains(e.target)) {
@@ -93,7 +89,6 @@ export default function Navbar() {
         <div className="dropdown-menu">
           <p className="user-email">{user?.email}</p>
 
-          {/* 🌗 Theme toggle button */}
           <button
             style={{
               background: "var(--primary)",
